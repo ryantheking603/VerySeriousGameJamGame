@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://ccpdax6ahjugx"]
+
+[ext_resource type="Texture2D" uid="uid://dmqalsqoafm0y" path="res://img/temphammer.jpg" id="1_jnxeu"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_71ww8"]
+radius = 63.0
+height = 224.0
+
+[node name="hammerProjectile" type="RigidBody2D" unique_id=1773882243]
+gravity_scale = 0.0
+
+[node name="Temphammer" type="Sprite2D" parent="." unique_id=1141223215]
+position = Vector2(-0.99993896, 3.0517578e-05)
+scale = Vector2(0.59292036, 0.38866398)
+texture = ExtResource("1_jnxeu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1074745962]
+position = Vector2(3, -4)
+shape = SubResource("CapsuleShape2D_71ww8")
+disabled = true

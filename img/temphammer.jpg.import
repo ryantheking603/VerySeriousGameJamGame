@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmhdqeug4lfli"
-path="res://.godot/imported/temp.jpg-e434ee9cfce80b053928ff7afcb5af71.ctex"
+uid="uid://dmqalsqoafm0y"
+path="res://.godot/imported/temphammer.jpg-8c43ff880444bd8d00920f8ce934442b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main_char/temp.jpg"
-dest_files=["res://.godot/imported/temp.jpg-e434ee9cfce80b053928ff7afcb5af71.ctex"]
+source_file="res://img/temphammer.jpg"
+dest_files=["res://.godot/imported/temphammer.jpg-8c43ff880444bd8d00920f8ce934442b.ctex"]
 
 [params]
 

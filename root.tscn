@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://cpgvebp5o7ro"]
 
-[ext_resource type="Texture2D" uid="uid://ds1iufie2u6jj" path="res://images.jpeg" id="1_pq8q7"]
-[ext_resource type="Texture2D" uid="uid://cmhdqeug4lfli" path="res://main_char/temp.jpg" id="2_pyidc"]
+[ext_resource type="Texture2D" uid="uid://ds1iufie2u6jj" path="res://img/images.jpeg" id="1_pq8q7"]
+[ext_resource type="Texture2D" uid="uid://cmhdqeug4lfli" path="res://img/main_char/temp.jpg" id="2_pyidc"]
 [ext_resource type="Script" uid="uid://bknu6daudhhb7" path="res://character_body_2d.gd" id="2_vvh5c"]
+[ext_resource type="PackedScene" uid="uid://ccpdax6ahjugx" path="res://hammer_projectile.tscn" id="4_28aoi"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_71ww8"]
 animations = [{
@@ -25,17 +26,22 @@ position = Vector2(589.5, 338)
 scale = Vector2(1.8260188, 1.4)
 texture = ExtResource("1_pq8q7")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=108888972]
+[node name="Character" type="CharacterBody2D" parent="." unique_id=108888972]
 position = Vector2(623, 409)
 scale = Vector2(0.5085377, 0.44672483)
 motion_mode = 1
 script = ExtResource("2_vvh5c")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1917219576]
+[node name="hammerProjectile" parent="Character" unique_id=1773882243 instance=ExtResource("4_28aoi")]
+position = Vector2(210.40723, -17.908142)
+rotation = 1.0471976
+scale = Vector2(0.99999994, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Character" unique_id=1917219576]
 position = Vector2(0, -4.2915344e-06)
 scale = Vector2(0.99999994, 0.33870968)
 sprite_frames = SubResource("SpriteFrames_71ww8")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=521268493]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Character" unique_id=521268493]
 scale = Vector2(0.9999995, 1)
 shape = SubResource("RectangleShape2D_81ajq")

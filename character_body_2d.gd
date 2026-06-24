@@ -1,11 +1,37 @@
 extends CharacterBody2D
 
-@export var speed = 400
+
+var movement_dir = Vector2.ZERO
+var rotation_dir: float = 0
+var rotation_speed: float = 0
+
+@export var max_speed = 200
+@export var acceleration = 50
+@export var friction: float = 200.0
+@export var max_rotation_speed = 200
+@export var rotation_friction = 5
+@export var rotation_accel = 10
+
+
 
 func get_input():
-	var input_direction = Input.get_vector("left", "right", "up", "down")
-	velocity = input_direction * speed
+	movement_dir = Input.get_vector("left2", "right2", "up2", "down2")
+	rotation_dir = Input.get_axis("left", "right")
+	
 
 func _physics_process(delta):
 	get_input()
+	
+	if movement_dir != Vector2.ZERO:
+		velocity = velocity.move_toward(movement_dir * max_speed, acceleration * delta)
+	else:
+		velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
 	move_and_slide()
+	
+	if rotation_dir != 0:
+		var target_spin = rotation_dir * max_rotation_speed
+		rotation_speed = move_toward(rotation_speed, target_spin, rotation_accel * delta)
+	else:
+		rotation_speed = move_toward(rotation_speed, 0.0, rotation_friction * delta)
+	rotation +=  rotation_speed * delta
+	
