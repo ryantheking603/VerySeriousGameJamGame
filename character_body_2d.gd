@@ -16,6 +16,7 @@ var rotation_speed: float = 0
 @export var rotation_accel = 10
 
 func _ready() -> void:
+	NodeRefs.player_ref = self
 	my_weapon = $hammerProjectile
 	original_offset = my_weapon.position
 	original_rotation = my_weapon.rotation
