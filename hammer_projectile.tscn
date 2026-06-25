@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://ccpdax6ahjugx"]
 
+[ext_resource type="Script" uid="uid://i0r8dwfoa6im" path="res://hammer_projectile.gd" id="1_7x8yt"]
 [ext_resource type="Texture2D" uid="uid://dmqalsqoafm0y" path="res://img/temphammer.jpg" id="1_jnxeu"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_71ww8"]
@@ -8,6 +9,7 @@ height = 224.0
 
 [node name="hammerProjectile" type="RigidBody2D" unique_id=1773882243]
 gravity_scale = 0.0
+script = ExtResource("1_7x8yt")
 
 [node name="Temphammer" type="Sprite2D" parent="." unique_id=1141223215]
 position = Vector2(-0.99993896, 3.0517578e-05)
